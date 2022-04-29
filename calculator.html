@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="button" ]{
+            font-size: 50px;
+            padding: 30px;
+           
+        }
+        input[type="text"]{
+            font-size: 50px;
+        }
+        #clear{
+           width: 500px;
+        }
+        #clear{
+        background-color: red;
+    }
+    #clear:hover{
+        color:white;
+    }
+
+       input[type="button"]:hover{
+           background-color: rgba(43, 240, 17, 0.712);
+        cursor: pointer;
+       }
+       input[type="button"]{
+           background-color: beige;
+           border-radius: 30px;
+       }
+    .cacu{
+        border: 2px solid rgb(0, 0, 0);
+        text-align: center;
+        width: 45%;
+        margin-top: 5%;
+       position: relative;
+       left: 36%;
+       background-color: rgba(54, 200, 219, 0.61)
+    }
+    h1{
+        text-align: center;
+        font-size: 50px;
+        color: brown;
+    }
+    
+    </style>
+</head>
+<body>
+    <h1>CALCULATOR </h1>
+    <div class="cacu">
+        <table>
+            <tr>
+                <th colspan="4"><input type="text" name="" id="space"></th>
+            </tr>
+            <th><input id="btn0"  type="button" value="0" onclick="display(0)" ></th>
+            <th><input type="button" value="B" onclick="backSpace()"></th>
+            <th><input type="button" value="." onclick="display('.')"></th>
+            <th><input type="button" value="+" onclick="display('+')"></th>
+            <tr>
+                <th><input type="button" value="1" onclick="display(1)"></th>
+                <th><input type="button" value="2" onclick="display(2)"></th>
+                <th><input type="button" value="3" onclick="display(3)"></th>
+                <th><input type="button" value="-" onclick="display('-')"></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="4" onclick="display(4)"></th>
+                <th><input type="button" value="5" onclick="display(5)"></th>
+                <th><input type="button" value="6" onclick="display(6)"></th>
+                <th><input type="button" value="*" onclick="display('*')"></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="7" onclick="display(7)"></th>
+                <th><input type="button" value="8" onclick="display(8)"></th>
+                <th><input type="button" value="9" onclick="display(9)"></th>
+                <th><input type="button" value="/" onclick="display('/')"></th>
+            </tr>
+            <tr>
+                <th colspan="3"><input id="clear"  type="button" value="clear All" onclick="clear1()"></th>
+                <th><input type="button" value="=" onclick="call1()"></th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let x,y;
+        function display(val){
+      document.getElementById('space').value+=val;
+      
+        }
+        function clear1(){
+            document.getElementById('space').value="";
+        }
+        
+        function call1(){
+        
+            x=document.getElementById('space').value;
+         y=eval(x);
+         document.getElementById('space').value=y;
+         
+        }
+        let back1,r,l;
+        function backSpace(){
+         back1=document.getElementById("space").value;
+         l= back1.length;
+         
+         r=back1.substring(0,l-1);
+         document.getElementById("space").value=r;
+        }
+    </script>
+</body>
+</html>
